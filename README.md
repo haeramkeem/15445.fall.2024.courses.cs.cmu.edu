@@ -2,4 +2,5 @@
 
 ## Index
 
+- [MySQL](./mysql)
 - [PostgreSQL](./postgres)

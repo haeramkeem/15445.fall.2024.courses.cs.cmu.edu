@@ -1,0 +1,31 @@
+version: "3.5"
+
+services:
+  mysql:
+    image: mysql
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: toor
+      MYSQL_PASSWORD: toor
+      MYSQL_ROOT_PASSWORD: toor
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - mysql:/var/lib/mysql
+    networks:
+      - default
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links: 
+      - mysql:db
+    ports:
+      - 23306:80
+    environment:
+      MYSQL_USER: toor
+      MYSQL_PASSWORD: toor
+      MYSQL_ROOT_PASSWORD: toor
+
+volumes:
+  mysql:
