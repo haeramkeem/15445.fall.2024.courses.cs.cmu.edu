@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "compose-postgres": {
+            "Name": "postgres",
+            "Group": "postgres",
+            "Port": 5432,
+            "Username": "toor",
+            "Host": "postgres",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}
