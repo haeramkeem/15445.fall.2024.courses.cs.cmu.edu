@@ -1,0 +1,10 @@
+services:
+  duckdb:
+    image: ghcr.io/haeramkeem/compose-dbms/duckdb:latest
+    build:
+      context: images
+      dockerfile: Dockerfile
+    environment:
+      DUCKDB_PERSISTENT: duck.db
+    volumes:
+      - ./init/:/duckdb.init.d/
